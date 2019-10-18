@@ -13,3 +13,9 @@ UnStages/
 Assets/AssetStoreTools*
 
 .idea
+
+*.csproj
+
+*.sln
+
+*.userprefs

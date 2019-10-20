@@ -18,8 +18,19 @@ namespace ARPass.Start.View {
 				.CurrentLoaded
 				.Subscribe(c => _loading.UpdateStatus((int) c))
 				.AddTo(this);
-			
+
+			_client
+				.OnLoadFinished
+				.Subscribe(_ => OnLoadFinish())
+				.AddTo(this);
+
 			_client.InitialLoad();
+		}
+
+		void OnLoadFinish()
+		{
+			_client.Dispose();
+			_loading.Hide();
 		}
 	}
 }

@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: d099e1376f99b49c6b01766d7479c82b
+labels:
+- gvh
+- gvh_targets-windows-windows64-osx-osxintel-osxintel64-linux-linux32-linux64
+- gvh_version-6.6.0
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

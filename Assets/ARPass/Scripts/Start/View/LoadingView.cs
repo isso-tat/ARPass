@@ -1,5 +1,8 @@
+using System;
 using DG.Tweening;
+using JetBrains.Annotations;
 using TMPro;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +24,7 @@ namespace ARPass.Start.View
 			_currentLoaded.text = currentLoaded.ToString();
 		}
 
-		public void Hide()
+		public async UniTask Hide()
 		{
 			DOTween
 				.To(
@@ -36,6 +39,8 @@ namespace ARPass.Start.View
 					c => _image.color = c,
 					Color.clear,
 					_hideDuration);
+
+			await UniTask.Delay(TimeSpan.FromSeconds(_hideDuration));
 		}
 	}
 }

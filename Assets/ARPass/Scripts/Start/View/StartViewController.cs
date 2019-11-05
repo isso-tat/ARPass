@@ -1,6 +1,8 @@
-﻿using JetBrains.Annotations;
+﻿using ARPass.Utils;
+using JetBrains.Annotations;
 using UniRx;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace ARPass.Start.View {
@@ -9,6 +11,9 @@ namespace ARPass.Start.View {
 		[Inject, UsedImplicitly]
 		IStartClient _client;
 
+		[SerializeField]
+		GameObject _startCanvas;
+		
 		[SerializeField]
 		LoadingView _loading;
 
@@ -27,10 +32,28 @@ namespace ARPass.Start.View {
 			_client.InitialLoad();
 		}
 
-		void OnLoadFinish()
+		async void OnLoadFinish()
 		{
+			DontDestroyOnLoad(_startCanvas);
 			_client.Dispose();
-			_loading.Hide();
+			HideStartView();
+			StartARDemo();
+		}
+
+		async void HideStartView()
+		{
+			await _loading.Hide();
+			Destroy(_startCanvas);
+		}
+
+		void StartARDemo()
+		{
+			if (Application.platform == RuntimePlatform.Android)
+			{
+				AndroidUtils.ShowToast("Start AR Demo!");
+			}
+			
+			SceneManager.LoadSceneAsync("ARCoreDemo");
 		}
 	}
 }

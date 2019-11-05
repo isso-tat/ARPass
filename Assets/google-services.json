@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "727734816866",
+    "firebase_url": "https://arpass-fd645.firebaseio.com",
+    "project_id": "arpass-fd645",
+    "storage_bucket": "arpass-fd645.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727734816866:android:4d9be7debb66e317ad013b",
+        "android_client_info": {
+          "package_name": "com.tatsukii.ARPass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727734816866-mak8ejqegmcf2b5jfoluiad87g8tf7lt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiRIQLZW9vRV08AsIrkOoP5r-GNI-SGgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "727734816866-mak8ejqegmcf2b5jfoluiad87g8tf7lt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "727734816866-prtkocdc1ci71vqhge5dtji2o5p79psb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tatsukii.ARPass"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,11 +11,14 @@ namespace ARPass.Start
 		readonly int _loadFrameTime = 200;
 		
 		readonly Subject<float> _currentLoaded = new Subject<float>();
+		readonly Subject<Unit> _loadFinished = new Subject<Unit>();
+		
 		public IObservable<float> CurrentLoaded => _currentLoaded;
+		public IObservable<Unit> OnLoadFinished => _loadFinished;
 		
 		public void InitialLoad()
 		{
-			var coroutine = Runner.Instance.StartCoroutine(LoadCoroutine());
+			Runner.Instance.StartCoroutine(LoadCoroutine());
 		}
 
 		IEnumerator LoadCoroutine()
@@ -30,7 +33,14 @@ namespace ARPass.Start
 				yield return i / _loadFrameTime;
 			}
 
+			_loadFinished.OnNext(Unit.Default);
 			yield return null;
+		}
+
+		public void Dispose()
+		{
+			_currentLoaded?.Dispose();
+			_loadFinished?.Dispose();
 		}
 	}
 }

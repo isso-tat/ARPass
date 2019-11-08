@@ -3,7 +3,7 @@ using ARPass.Utils;
 using UniRx;
 using UniRx.Async;
 
-namespace ARPass.Start
+namespace ARPass.Scenes.Start
 {
 	public class StartClient : IStartClient
 	{

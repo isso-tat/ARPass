@@ -1,7 +1,7 @@
 using System;
 using UniRx;
 
-namespace ARPass.Start
+namespace ARPass.Scenes.Start
 {
 	public interface IStartClient : IDisposable
 	{

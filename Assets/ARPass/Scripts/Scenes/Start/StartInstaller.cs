@@ -1,8 +1,7 @@
-using Unity.Collections;
 using UnityEngine;
 using Zenject;
 
-namespace ARPass.Start
+namespace ARPass.Scenes.Start
 {
     public class StartInstaller : MonoInstaller
     {

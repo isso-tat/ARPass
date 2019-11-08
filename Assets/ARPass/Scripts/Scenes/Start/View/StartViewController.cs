@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace ARPass.Start.View {
+namespace ARPass.Scenes.Start.View {
 	public class StartViewController : MonoBehaviour
 	{
 		[Inject, UsedImplicitly]
@@ -32,7 +32,7 @@ namespace ARPass.Start.View {
 			_client.InitialLoad();
 		}
 
-		async void OnLoadFinish()
+		void OnLoadFinish()
 		{
 			DontDestroyOnLoad(_startCanvas);
 			_client.Dispose();

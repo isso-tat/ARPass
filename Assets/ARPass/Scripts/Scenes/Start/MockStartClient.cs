@@ -2,9 +2,8 @@ using System;
 using System.Collections;
 using ARPass.Utils;
 using UniRx;
-using UnityEngine;
 
-namespace ARPass.Start
+namespace ARPass.Scenes.Start
 {
 	public class MockStartClient : IStartClient
 	{

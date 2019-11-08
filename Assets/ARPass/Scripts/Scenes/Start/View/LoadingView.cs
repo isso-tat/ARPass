@@ -1,12 +1,11 @@
 using System;
 using DG.Tweening;
-using JetBrains.Annotations;
 using TMPro;
 using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ARPass.Start.View
+namespace ARPass.Scenes.Start.View
 {
 	public class LoadingView : MonoBehaviour
 	{

@@ -1,8 +1,9 @@
-﻿using ARPass.Utils;
+﻿using System;
+using ARPass.Utils;
 using JetBrains.Annotations;
 using UniRx;
+using UniRx.Async;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace ARPass.Scenes.Start.View {
@@ -17,27 +18,29 @@ namespace ARPass.Scenes.Start.View {
 		[SerializeField]
 		LoadingView _loading;
 
-		void Start()
+		async void Start()
 		{
+			DontDestroyOnLoad(_startCanvas);
+			
 			_client
 				.CurrentLoaded
 				.Subscribe(c => _loading.UpdateStatus((int) c))
 				.AddTo(this);
 
 			_client
-				.OnLoadFinished
-				.Subscribe(_ => OnLoadFinish())
+				.OnAuthLoaded
+				.Subscribe(_ => StartARDemo())
 				.AddTo(this);
 
-			_client.InitialLoad();
+			await _client.InitialLoad();
+			
+			OnLoadFinish();
 		}
 
 		void OnLoadFinish()
 		{
-			DontDestroyOnLoad(_startCanvas);
 			_client.Dispose();
 			HideStartView();
-			StartARDemo();
 		}
 
 		async void HideStartView()
@@ -46,14 +49,16 @@ namespace ARPass.Scenes.Start.View {
 			Destroy(_startCanvas);
 		}
 
-		void StartARDemo()
+		async void StartARDemo()
 		{
 			if (Application.platform == RuntimePlatform.Android)
 			{
-				AndroidUtils.ShowToast("Start AR Demo!");
+				AndroidUtils.ShowToast("Start!");
 			}
-			
-			SceneManager.LoadSceneAsync("ARCoreDemo");
+
+			await UniTask.Delay(TimeSpan.FromSeconds(3));
+			await ARPassSceneManager.Instance.LoadSceneAsync(SceneName.Map);
+			_client.SceneLoadFinished();
 		}
 	}
 }

@@ -17,10 +17,10 @@ namespace ARPass.Scenes.Start
 
 		bool _sceneLoadFinished;
 
-		public void InitialLoad()
+		public async UniTask InitialLoad()
 		{
 			_currentLoaded.OnNext(1);
-			FirebaseInit().Away();
+			await FirebaseInit();
 			_currentLoaded.OnNext(100);
 		}
 

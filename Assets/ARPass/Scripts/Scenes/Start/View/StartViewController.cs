@@ -1,6 +1,8 @@
-﻿using ARPass.Utils;
+﻿using System;
+using ARPass.Utils;
 using JetBrains.Annotations;
 using UniRx;
+using UniRx.Async;
 using UnityEngine;
 using Zenject;
 
@@ -16,8 +18,10 @@ namespace ARPass.Scenes.Start.View {
 		[SerializeField]
 		LoadingView _loading;
 
-		void Start()
+		async void Start()
 		{
+			DontDestroyOnLoad(_startCanvas);
+			
 			_client
 				.CurrentLoaded
 				.Subscribe(c => _loading.UpdateStatus((int) c))
@@ -28,17 +32,13 @@ namespace ARPass.Scenes.Start.View {
 				.Subscribe(_ => StartARDemo())
 				.AddTo(this);
 
-			_client
-				.OnLoadFinished
-				.Subscribe(_ => OnLoadFinish())
-				.AddTo(this);
-
-			_client.InitialLoad();
+			await _client.InitialLoad();
+			
+			OnLoadFinish();
 		}
 
 		void OnLoadFinish()
 		{
-			DontDestroyOnLoad(_startCanvas);
 			_client.Dispose();
 			HideStartView();
 		}
@@ -56,6 +56,7 @@ namespace ARPass.Scenes.Start.View {
 				AndroidUtils.ShowToast("Start!");
 			}
 
+			await UniTask.Delay(TimeSpan.FromSeconds(3));
 			await ARPassSceneManager.Instance.LoadSceneAsync(SceneName.Map);
 			_client.SceneLoadFinished();
 		}

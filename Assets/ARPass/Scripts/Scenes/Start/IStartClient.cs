@@ -1,5 +1,6 @@
 using System;
 using UniRx;
+using UniRx.Async;
 
 namespace ARPass.Scenes.Start
 {
@@ -7,8 +8,7 @@ namespace ARPass.Scenes.Start
 	{
 		IObservable<float> CurrentLoaded { get; }
 		IObservable<Unit> OnAuthLoaded { get; }
-		IObservable<Unit> OnLoadFinished { get; }
-		void InitialLoad();
+		UniTask InitialLoad();
 		void SceneLoadFinished();
 	}
 }

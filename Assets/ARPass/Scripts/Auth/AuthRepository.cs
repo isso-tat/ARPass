@@ -13,7 +13,6 @@ namespace ARPass.Auth
 		public void SaveAuth(AuthEntity entity)
 		{
 			_entity = entity;
-			Debug.Log(_entity.Id);
 		}
 	}
 }

@@ -37,24 +37,16 @@ namespace ARPass.Scenes.Start.View {
 			OnLoadFinish();
 		}
 
-		void OnLoadFinish()
+		async void OnLoadFinish()
 		{
 			_client.Dispose();
-			HideStartView();
-		}
-
-		async void HideStartView()
-		{
 			await _loading.Hide();
 			Destroy(_startCanvas);
 		}
 
 		async void StartARDemo()
 		{
-			if (Application.platform == RuntimePlatform.Android)
-			{
-				AndroidUtils.ShowToast("Start!");
-			}
+			if (Application.platform == RuntimePlatform.Android) AndroidUtils.ShowToast("Start!");
 
 			await UniTask.Delay(TimeSpan.FromSeconds(3));
 			await ARPassSceneManager.Instance.LoadSceneAsync(SceneName.Map);

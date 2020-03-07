@@ -1,31 +1,28 @@
+using ARPass.Http;
 using UnityEngine;
 using Zenject;
 
 namespace ARPass.Scenes.Start
 {
-    public class StartInstaller : MonoInstaller
-    {
-        [SerializeField]
-        bool _isMock;
+	public class StartInstaller : MonoInstaller
+	{
+		[SerializeField]
+		bool _isMock;
 
-        public override void InstallBindings()
-        {
-            var client = InstantiateClient();
-            
-            Container
-                .Bind<IStartClient>()
-                .FromInstance(client)
-                .AsSingle();
-        }
+		public override void InstallBindings()
+		{
+			APIInstaller.Install(Container);
 
-        IStartClient InstantiateClient()
-        {
-            if (_isMock)
-            {
-                return new MockStartClient();
-            }
-
-            return new StartClient();
-        }
-    }
+			if (_isMock)
+				Container
+					.Bind<IStartClient>()
+					.To<MockStartClient>()
+					.AsSingle();
+			else
+				Container
+					.Bind<IStartClient>()
+					.To<StartClient>()
+					.AsSingle();
+		}
+	}
 }

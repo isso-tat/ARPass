@@ -1,17 +1,18 @@
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 using ModestTree;
 
 namespace Zenject
 {
     [NoReflectionBaking]
-    public class SubContainerCreatorByInstance : ISubContainerCreator
+    public class SubContainerCreatorByInstanceGetter : ISubContainerCreator
     {
-        readonly DiContainer _subcontainer;
+        readonly Func<InjectContext, DiContainer> _subcontainerGetter;
 
-        public SubContainerCreatorByInstance(DiContainer subcontainer)
+        public SubContainerCreatorByInstanceGetter(
+            Func<InjectContext, DiContainer> subcontainerGetter)
         {
-            _subcontainer = subcontainer;
+            _subcontainerGetter = subcontainerGetter;
         }
 
         public DiContainer CreateSubContainer(List<TypeValuePair> args, InjectContext context, out Action injectAction)
@@ -23,7 +24,7 @@ namespace Zenject
             // It is assumed here that the subcontainer has already had ResolveRoots called elsewhere
             // Since most likely you are adding a subcontainer that is already in a context or
             // something rather than directly using DiContainer.CreateSubContainer
-            return _subcontainer;
+            return _subcontainerGetter(context);
         }
     }
 }

@@ -54,9 +54,7 @@ namespace ARPass.Http
 			}
 			catch (TimeoutException)
 			{
-				// TODO: Impl timeout exception.
-				Debug.LogError("API Timeout Exception!!");
-				throw;
+				return new APIResult(APIStatus.Timeout, "API Timeout Error.");
 			}
 		}
 

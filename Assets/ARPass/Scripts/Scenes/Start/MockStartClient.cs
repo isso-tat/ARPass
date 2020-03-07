@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using ARPass.Auth;
+using ARPass.Http;
 using ARPass.Utils;
 using UniRx;
 using UniRx.Async;
@@ -10,32 +11,23 @@ namespace ARPass.Scenes.Start
 {
 	public class MockStartClient : IStartClient
 	{
-		AuthRepository _authRepository;
-
 		const int _authLoadFrameTime = 120;
 		const int _sceneLoadFrameTime = 80;
 		const int _authLoadPercent = 60;
 		const int _sceneLoadPercent = 39;
 		
 		readonly Subject<float> _currentLoaded = new Subject<float>();
-		readonly Subject<Unit> _authLoaded = new Subject<Unit>();
+		readonly Subject<APIStatus> _authLoaded = new Subject<APIStatus>();
 		
 		public IObservable<float> CurrentLoaded => _currentLoaded;
-		public IObservable<Unit> OnAuthLoaded => _authLoaded;
+		public IObservable<APIStatus> OnAuthLoaded => _authLoaded;
 
 		bool _sceneLoadFinished;
 
-		public MockStartClient(AuthRepository authRepository)
-		{
-			_authRepository = authRepository;
-		}
-
 		public async UniTask InitialLoad()
 		{
-			var authEntity = Resources.Load<TextAsset>("mockauth").ToString().DeserializeJson<AuthEntity>();
 			await Runner.Instance.StartCoroutine(LoadCoroutine(0, _authLoadFrameTime, _authLoadPercent));
-			_authRepository.SaveMe(authEntity);
-			_authLoaded.OnNext(Unit.Default);
+			_authLoaded.OnNext(APIStatus.Unauthorized); // User is always expired in mock.
 			await Runner.Instance.StartCoroutine(LoadCoroutine(_authLoadPercent, _sceneLoadFrameTime, _sceneLoadPercent));
 			await UniTask.WaitUntil(() => _sceneLoadFinished);
 			_currentLoaded.OnNext(100);

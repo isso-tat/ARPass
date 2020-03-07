@@ -11,10 +11,10 @@ namespace ARPass.Http
 			return response.Data;
 		}
 
-		public async UniTask<string> FetchMe()
+		public async UniTask<APIResult> FetchMe()
 		{
 			var response = await Get("me");
-			return response.Data;
+			return response;
 		}
 	}
 }

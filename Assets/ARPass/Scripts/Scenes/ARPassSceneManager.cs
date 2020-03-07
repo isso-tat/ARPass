@@ -10,25 +10,12 @@ namespace ARPass.Scenes
 
 		public void LoadScene(SceneName scene)
 		{
-			SceneManager.LoadScene(GetSceneName(scene));
+			SceneManager.LoadScene(scene.ToString());
 		}
 
 		public async UniTask LoadSceneAsync(SceneName scene)
 		{
-			await SceneManager.LoadSceneAsync(GetSceneName(scene));
-		}
-
-		string GetSceneName(SceneName scene)
-		{
-			switch (scene)
-			{
-				case SceneName.Start:
-					return "Start";
-				case SceneName.Map:
-					return "Map";
-				default:
-					throw new Exception($"Scene name not defined: { scene }");
-			}
+			await SceneManager.LoadSceneAsync(scene.ToString());
 		}
 	}
 }

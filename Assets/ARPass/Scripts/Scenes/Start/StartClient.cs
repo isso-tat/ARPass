@@ -10,14 +10,16 @@ namespace ARPass.Scenes.Start
 	public class StartClient : IStartClient
 	{
 		readonly Subject<float> _currentLoaded = new Subject<float>();
-		readonly Subject<Unit> _authLoadFinished = new Subject<Unit>();
+		readonly Subject<APIStatus> _authLoadedFinished = new Subject<APIStatus>();
 		readonly Subject<Unit> _loadFinished = new Subject<Unit>();
 
 		public IObservable<float> CurrentLoaded => _currentLoaded;
-		public IObservable<Unit> OnAuthLoaded => _authLoadFinished;
+		public IObservable<APIStatus> OnAuthLoaded => _authLoadedFinished;
 		public IObservable<Unit> OnLoadFinished => _loadFinished;
 
 		readonly APIClient _apiClient;
+
+		bool _sceneLoaded;
 
 		public StartClient(APIClient apiClient)
 		{
@@ -29,12 +31,16 @@ namespace ARPass.Scenes.Start
 			_currentLoaded.OnNext(1);
 			await FirebaseInit();
 			_currentLoaded.OnNext(50);
-			Debug.Log(await _apiClient.FetchMe());
+			var result = await _apiClient.FetchMe();
+			_authLoadedFinished.OnNext(result.Status);
+			_currentLoaded.OnNext(90);
+			await UniTask.WaitUntil(() => _sceneLoaded);
 			_currentLoaded.OnNext(100);
 		}
 
 		public void SceneLoadFinished()
 		{
+			_sceneLoaded = true;
 		}
 
 		async UniTask FirebaseInit()

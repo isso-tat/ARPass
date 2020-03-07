@@ -275,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 219909662}
   _currentLoaded: {fileID: 693447532}
-  _hideDuration: 0.5
+  _hideDuration: 0.75
 --- !u!114 &219909665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,7 +896,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &1902723428
 RectTransform:
@@ -966,6 +966,18 @@ MonoBehaviour:
   - {fileID: 2114352938}
   _installerPrefabs: []
   _autoRun: 1
+  OnPreInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPreResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostResolve:
+    m_PersistentCalls:
+      m_Calls: []
   _parentNewObjectsUnderSceneContext: 0
   _contractNames: []
   _parentContractNames: []

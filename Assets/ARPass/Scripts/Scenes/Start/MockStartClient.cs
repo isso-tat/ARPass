@@ -10,6 +10,8 @@ namespace ARPass.Scenes.Start
 {
 	public class MockStartClient : IStartClient
 	{
+		AuthRepository _authRepository;
+
 		const int _authLoadFrameTime = 120;
 		const int _sceneLoadFrameTime = 80;
 		const int _authLoadPercent = 60;
@@ -23,11 +25,16 @@ namespace ARPass.Scenes.Start
 
 		bool _sceneLoadFinished;
 
+		public MockStartClient(AuthRepository authRepository)
+		{
+			_authRepository = authRepository;
+		}
+
 		public async UniTask InitialLoad()
 		{
 			var authEntity = Resources.Load<TextAsset>("mockauth").ToString().DeserializeJson<AuthEntity>();
 			await Runner.Instance.StartCoroutine(LoadCoroutine(0, _authLoadFrameTime, _authLoadPercent));
-			AuthRepository.Instance.SaveAuth(authEntity);
+			_authRepository.SaveMe(authEntity);
 			_authLoaded.OnNext(Unit.Default);
 			await Runner.Instance.StartCoroutine(LoadCoroutine(_authLoadPercent, _sceneLoadFrameTime, _sceneLoadPercent));
 			await UniTask.WaitUntil(() => _sceneLoadFinished);

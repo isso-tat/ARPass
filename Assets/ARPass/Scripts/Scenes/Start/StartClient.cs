@@ -29,7 +29,7 @@ namespace ARPass.Scenes.Start
 			_currentLoaded.OnNext(1);
 			await FirebaseInit();
 			_currentLoaded.OnNext(50);
-			Debug.Log(await _apiClient.Test());
+			Debug.Log(await _apiClient.FetchMe());
 			_currentLoaded.OnNext(100);
 		}
 

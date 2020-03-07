@@ -4,7 +4,7 @@ namespace ARPass.Http
 	{
 		public APIStatus Status { get; }
 		public string Data { get; }
-		public bool IsError => Status < APIStatus.BadRequest;
+		public bool IsError => Status >= APIStatus.BadRequest;
 
 		public APIResult(APIStatus status, string data)
 		{

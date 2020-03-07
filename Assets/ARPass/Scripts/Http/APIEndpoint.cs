@@ -1,4 +1,5 @@
 using UniRx.Async;
+using UnityEngine;
 
 namespace ARPass.Http
 {
@@ -7,6 +8,12 @@ namespace ARPass.Http
 		public async UniTask<string> Test()
 		{
 			var response = await Get("test/a");
+			return response.Data;
+		}
+
+		public async UniTask<string> FetchMe()
+		{
+			var response = await Get("me");
 			return response.Data;
 		}
 	}

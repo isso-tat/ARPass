@@ -6,11 +6,15 @@ namespace ARPass.Http
 	{
 		public override void InstallBindings()
 		{
-			var client = new APIClient("http://localhost:8001");
+			// TODO: Change the injected host according to environment.
+
+			Container
+				.Bind<string>()
+				.FromInstance("http://localhost:8001")
+				.WhenInjectedInto<APIClient>();
 
 			Container
 				.Bind<APIClient>()
-				.FromInstance(client)
 				.AsSingle()
 				.Lazy();
 		}

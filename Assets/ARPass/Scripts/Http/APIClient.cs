@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ARPass.Auth;
 using UniRx.Async;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -8,12 +9,15 @@ namespace ARPass.Http
 {
 	public partial class APIClient
 	{
+		AuthRepository _auth;
+
 		readonly string _host;
 		const int _timeout = 5000;
 
-		public APIClient(string host)
+		public APIClient(string host, AuthRepository authRepository)
 		{
 			_host = host;
+			_auth = authRepository;
 		}
 
 		string GenerateUri(string path) => $"{_host}/{path}";
@@ -39,6 +43,8 @@ namespace ARPass.Http
 
 		async UniTask<APIResult> SendRequest(UnityWebRequest request)
 		{
+			SetHeaders(ref request);
+			Debug.Log($"API {request.method}: {request.uri}");
 			try
 			{
 				await request
@@ -52,6 +58,15 @@ namespace ARPass.Http
 				Debug.LogError("API Timeout Exception!!");
 				throw;
 			}
+		}
+
+		void SetHeaders(ref UnityWebRequest request)
+		{
+			// If token is "", the response code is 400, which is not suitable to detect unauthorized error.
+			var token = string.IsNullOrEmpty(_auth.AccessToken) ? "missing" : _auth.AccessToken;
+			request.SetRequestHeader("Authorization", $"Bearer {token}");
+			request.SetRequestHeader("Accept", "application/json");
+			request.SetRequestHeader("Cache-Control", "no-cache");
 		}
 	}
 }

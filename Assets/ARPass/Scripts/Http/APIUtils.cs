@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UniRx.Async;
+using UnityEngine;
 using UnityEngine.Networking;
 
 namespace ARPass.Http
@@ -14,7 +15,7 @@ namespace ARPass.Http
 			var queries = String.Join("&", parameters.Select(kvp => $"{kvp.Key}={kvp.Value}"));
 			return $"{uri}?{queries}";
 		}
-		
+
 		public static async UniTask SendRequest(this UnityWebRequest request)
 		{
 			await request.SendWebRequest();

@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/ARPass/Scenes/Start.unity
     guid: 1e9e8c8c055ca44efb32e6d40f939350
   - enabled: 1
-    path: Assets/ARPass/Scenes/__DEV__/ARCoreDemo.unity
-    guid: ed2bd2516d23445dba7a054d95ffd1fb
-  - enabled: 1
     path: Assets/ARPass/Scenes/Map.unity
     guid: 9e42ce1e5d4a843449732794921bf81d
+  - enabled: 1
+    path: Assets/ARPass/Scenes/Authenticate.unity
+    guid: 9afdf2d1c396f4734b5f7c4bf2c3289b
   m_configObjects: {}

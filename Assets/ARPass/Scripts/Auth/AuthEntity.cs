@@ -4,8 +4,7 @@ namespace ARPass.Auth
 {
 	public class AuthEntity
 	{
-		[JsonProperty("id")]
-		public int Id { get; private set; }
-
+		[JsonProperty("name")]
+		public string Name { get; private set; }
 	}
 }

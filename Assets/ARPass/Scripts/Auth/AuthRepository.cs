@@ -4,16 +4,28 @@ namespace ARPass.Auth
 {
 	public class AuthRepository
 	{
-		public static AuthRepository Instance = new AuthRepository();
+		const string _accessTokenPrefKey = "accessToken";
 
 		AuthEntity _entity;
-
 		public AuthEntity Entity => _entity;
 
-		public void SaveAuth(AuthEntity entity)
+		string _accessToken;
+		public string AccessToken => _accessToken;
+
+		public AuthRepository()
+		{
+			_accessToken = PlayerPrefs.GetString(_accessTokenPrefKey);
+		}
+
+		public void SaveMe(AuthEntity entity)
 		{
 			_entity = entity;
-			Debug.Log(_entity.Id);
+		}
+
+		public void SaveAccessToken(string token)
+		{
+			_accessToken = token;
+			PlayerPrefs.SetString(_accessTokenPrefKey, token);
 		}
 	}
 }

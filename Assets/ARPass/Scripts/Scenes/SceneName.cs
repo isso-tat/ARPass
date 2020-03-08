@@ -2,7 +2,7 @@ namespace ARPass.Scenes
 {
 	public enum SceneName
 	{
-		Auth,
+		Authenticate,
 		Map,
 		Start,
 	}

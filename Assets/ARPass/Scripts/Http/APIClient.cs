@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using ARPass.Auth;
+using ARPass.Utils;
 using UniRx.Async;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -9,7 +10,7 @@ namespace ARPass.Http
 {
 	public partial class APIClient
 	{
-		AuthRepository _auth;
+		readonly AuthRepository _auth;
 
 		readonly string _host;
 		const int _timeout = 5000;
@@ -43,8 +44,8 @@ namespace ARPass.Http
 
 		async UniTask<APIResult> SendRequest(UnityWebRequest request)
 		{
+			DebugUtils.Log($"API {request.method}: {request.uri}");
 			SetHeaders(ref request);
-			Debug.Log($"API {request.method}: {request.uri}");
 			try
 			{
 				await request
@@ -54,7 +55,7 @@ namespace ARPass.Http
 			}
 			catch (TimeoutException)
 			{
-				return new APIResult(APIStatus.Timeout, "API Timeout Error.");
+				throw new APIException(APIStatus.Timeout, "API Timeout Error.");
 			}
 		}
 

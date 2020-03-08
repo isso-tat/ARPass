@@ -55,7 +55,7 @@ namespace ARPass.Scenes.Start.View
 					await ARPassSceneManager.Instance.LoadSceneAsync(SceneName.Map);
 					break;
 				case APIStatus.Unauthorized:
-					await ARPassSceneManager.Instance.LoadSceneAsync(SceneName.Auth);
+					await ARPassSceneManager.Instance.LoadSceneAsync(SceneName.Authenticate);
 					break;
 				default:
 					ShowError(status);

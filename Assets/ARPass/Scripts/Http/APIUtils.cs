@@ -24,6 +24,7 @@ namespace ARPass.Http
 		public static APIResult ToAPIResult(this UnityWebRequest request)
 		{
 			var status = (APIStatus) request.responseCode;
+			if (status >= APIStatus.BadRequest) throw new APIException(status, request.downloadHandler.text);
 			return new APIResult(status, request.downloadHandler.text);
 		}
 	}

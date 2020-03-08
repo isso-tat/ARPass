@@ -1,4 +1,5 @@
 using System;
+using ARPass.Auth;
 using ARPass.Http;
 using ARPass.Utils;
 using UniRx;
@@ -18,12 +19,14 @@ namespace ARPass.Scenes.Start
 		public IObservable<Unit> OnLoadFinished => _loadFinished;
 
 		readonly APIClient _apiClient;
+		readonly AuthRepository _authRepository;
 
 		bool _sceneLoaded;
 
-		public StartClient(APIClient apiClient)
+		public StartClient(APIClient apiClient, AuthRepository authRepository)
 		{
 			_apiClient = apiClient;
+			_authRepository = authRepository;
 		}
 
 		public async UniTask InitialLoad()
@@ -31,8 +34,7 @@ namespace ARPass.Scenes.Start
 			_currentLoaded.OnNext(1);
 			await FirebaseInit();
 			_currentLoaded.OnNext(50);
-			var result = await _apiClient.FetchMe();
-			_authLoadedFinished.OnNext(result.Status);
+			await SaveAuth();
 			_currentLoaded.OnNext(90);
 			await UniTask.WaitUntil(() => _sceneLoaded);
 			_currentLoaded.OnNext(100);
@@ -70,6 +72,21 @@ namespace ARPass.Scenes.Start
 		{
 			_currentLoaded?.Dispose();
 			_loadFinished?.Dispose();
+		}
+
+		async UniTask SaveAuth()
+		{
+			try
+			{
+				var result = await _apiClient.FetchMe();
+				_authRepository.SaveMe(result);
+				_authLoadedFinished.OnNext(APIStatus.OK);
+			}
+			catch (APIException e)
+			{
+				_authLoadedFinished.OnNext(e.Status);
+			}
+			
 		}
 	}
 }

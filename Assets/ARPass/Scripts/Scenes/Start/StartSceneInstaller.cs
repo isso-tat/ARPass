@@ -5,7 +5,7 @@ using Zenject;
 
 namespace ARPass.Scenes.Start
 {
-	public class StartInstaller : MonoInstaller
+	public class StartSceneInstaller : MonoInstaller
 	{
 		[SerializeField]
 		bool _isMock;

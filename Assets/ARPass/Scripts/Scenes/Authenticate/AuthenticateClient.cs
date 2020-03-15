@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ARPass.Scenes.Authenticate
 {
-	public sealed class AuthenticateClient
+	public sealed class AuthenticateClient : IAuthenticateClient
 	{
 		readonly APIClient _apiClient;
 		readonly AuthRepository _authRepository;

@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7469b70db6f7451c8b673764806d4c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isMock: 1
 --- !u!1 &535554145
 GameObject:
   m_ObjectHideFlags: 0

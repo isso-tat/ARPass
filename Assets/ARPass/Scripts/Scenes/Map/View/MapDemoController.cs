@@ -1,16 +1,23 @@
 using System;
 using ARPass.Avatars;
 using ARPass.Avatars.View;
+using ARPass.Utils;
+using JetBrains.Annotations;
 using Mapbox.Unity.Map;
 using Mapbox.Unity.Utilities;
 using Mapbox.Utils;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Zenject;
 
 namespace ARPass.Scenes.Map.View
 {
 	public sealed class MapDemoController : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 	{
+		[Inject, UsedImplicitly]
+		IMapClient _client;
+		
 		[SerializeField]
 		AbstractMap _map;
 
@@ -30,9 +37,12 @@ namespace ARPass.Scenes.Map.View
 
 		Vector2d _current;
 
+		string _state;
+
 		void Start()
 		{
 			_map.Initialize(_lonLatOrigin, _zoom);
+			GUIField.Subscribe(this, 0, _onGui);
 		}
 		
 		public void OnPointerDown(PointerEventData eventData)
@@ -52,6 +62,23 @@ namespace ARPass.Scenes.Map.View
 		{
 			_lonLatOrigin = _current;
 			_animator.Animate(Vector2.zero);
+		}
+
+		void _onGui()
+		{
+			if (GUILayout.Button("Save", GUILayout.Height(40)))
+			{
+				SavePosition().Away();
+			}
+			GUILayout.Label(_state);
+		}
+
+		async UniTask SavePosition()
+		{
+			_state = "Saving position...";
+			await _client
+				.SavePosition(new Vector2((float)_current.x, (float)_current.y));
+			_state = "Saved!";
 		}
 	}
 }

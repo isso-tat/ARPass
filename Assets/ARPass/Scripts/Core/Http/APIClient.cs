@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using ARPass.Core.Auth;
+using ARPass.Core.SceneManagement;
 using ARPass.Utils;
 using UniRx.Async;
 using UnityEngine;

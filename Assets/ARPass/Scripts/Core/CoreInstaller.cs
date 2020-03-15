@@ -1,3 +1,7 @@
+using ARPass.Core.Auth;
+using ARPass.Core.Http;
+using ARPass.Core.SceneManagement;
+using UnityEngine;
 using Zenject;
 
 namespace ARPass.Core
@@ -6,7 +10,9 @@ namespace ARPass.Core
 	{
 		public override void InstallBindings()
 		{
-			
+			SceneManagementInstaller.Install(Container);
+			APIInstaller.Install(Container);
+			AuthInstaller.Install(Container);
 		}
 	}
 }

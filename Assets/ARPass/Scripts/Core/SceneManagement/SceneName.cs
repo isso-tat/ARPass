@@ -1,4 +1,4 @@
-namespace ARPass.Scenes
+namespace ARPass.Core.SceneManagement
 {
 	public enum SceneName
 	{

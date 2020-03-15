@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if UNITY_IOS
+
+using System;
 using UnityEngine;
 using UnityEngine.XR.iOS;
 using System.Collections;
@@ -43,3 +45,5 @@ public class UnityPointCloudExample : MonoBehaviour
         }
     }
 }
+
+#endif

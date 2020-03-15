@@ -1,3 +1,5 @@
+#if UNITY_IOS
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -225,7 +227,6 @@ namespace UnityEngine.XR.iOS {
             this.enableLightEstimation = enableLightEstimation;
 
 	    }
-
 
         [DllImport("__Internal")]
         private static extern bool IsARKitWorldTrackingSessionConfigurationSupported();
@@ -851,3 +852,5 @@ namespace UnityEngine.XR.iOS {
         }
 	}
 }
+
+#endif

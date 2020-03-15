@@ -18,12 +18,14 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCoreInternal
+using GoogleARCore.InstantPreview.Editor.CrossPlatform;
+
+namespace GoogleARCore.InstantPreview.Editor
 {
     using System;
     using System.Runtime.InteropServices;
     using GoogleARCore;
-    using GoogleARCoreInternal.CrossPlatform;
+    using Editor.CrossPlatform;
     using UnityEngine;
 
     internal class AnchorApi

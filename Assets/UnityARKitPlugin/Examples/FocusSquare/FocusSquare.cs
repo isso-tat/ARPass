@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_IOS
 using UnityEngine.XR.iOS;
+#endif
 
 public class FocusSquare : MonoBehaviour {
 
@@ -38,8 +40,8 @@ public class FocusSquare : MonoBehaviour {
 		SquareState = FocusState.Initializing;
 		trackingInitialized = true;
 	}
-
-
+	
+#if UNITY_IOS
 	bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)
 	{
 		List<ARHitTestResult> hitResults = UnityARSessionNativeInterface.GetARSessionNativeInterface ().HitTest (point, resultTypes);
@@ -53,6 +55,7 @@ public class FocusSquare : MonoBehaviour {
 		}
 		return false;
 	}
+#endif
 
 	// Update is called once per frame
 	void Update () {
@@ -78,7 +81,7 @@ public class FocusSquare : MonoBehaviour {
 		}
 
 
-		#else
+		#elif UNITY_IOS
 		var screenPosition = Camera.main.ScreenToViewportPoint(center);
 		ARPoint point = new ARPoint {
 			x = screenPosition.x,

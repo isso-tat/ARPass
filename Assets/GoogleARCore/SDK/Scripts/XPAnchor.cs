@@ -22,8 +22,8 @@ namespace GoogleARCore.CrossPlatform
 {
     using System;
     using System.Collections.Generic;
-    using GoogleARCoreInternal;
-    using GoogleARCoreInternal.CrossPlatform;
+    using InstantPreview.Editor;
+    using InstantPreview.Editor.CrossPlatform;
     using UnityEngine;
 
     /// <summary>
@@ -34,7 +34,7 @@ namespace GoogleARCore.CrossPlatform
     public class XPAnchor : MonoBehaviour
     {
         private static Dictionary<IntPtr, XPAnchor> s_AnchorDict =
-            new Dictionary<IntPtr, XPAnchor>(new GoogleARCoreInternal.IntPtrEqualityComparer());
+            new Dictionary<IntPtr, XPAnchor>(new InstantPreview.Editor.IntPtrEqualityComparer());
 
         private XPTrackingState m_LastFrameTrackingState = XPTrackingState.Stopped;
 

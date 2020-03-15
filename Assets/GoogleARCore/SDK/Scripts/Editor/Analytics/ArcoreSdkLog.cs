@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace GoogleARCoreInternal.Proto {
+namespace GoogleARCore.InstantPreview.Editor.Proto {
 
   /// <summary>Holder for reflection information generated from arcore_sdk_log.proto</summary>
   public static partial class ArcoreSdkLogReflection {
@@ -37,7 +37,7 @@ namespace GoogleARCoreInternal.Proto {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GoogleARCoreInternal.Proto.ArCoreSdkLog), global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Parser, new[]{ "SdkInstanceId", "ArcoreSdkVersion", "OsVersion", "Unity", "SdkSessionId" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Types.UnityEngine), global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Types.UnityEngine.Parser, new[]{ "Version", "EditionType" }, null, new[]{ typeof(global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Types.UnityEngine.Types.EditionType) }, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog), global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Parser, new[]{ "SdkInstanceId", "ArcoreSdkVersion", "OsVersion", "Unity", "SdkSessionId" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Types.UnityEngine), global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Types.UnityEngine.Parser, new[]{ "Version", "EditionType" }, null, new[]{ typeof(global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Types.UnityEngine.Types.EditionType) }, null)})
           }));
     }
     #endregion
@@ -58,7 +58,7 @@ namespace GoogleARCoreInternal.Proto {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GoogleARCoreInternal.Proto.ArcoreSdkLogReflection.Descriptor.MessageTypes[0]; }
+      get { return global::GoogleARCore.InstantPreview.Editor.Proto.ArcoreSdkLogReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,12 +136,12 @@ namespace GoogleARCoreInternal.Proto {
 
     /// <summary>Field number for the "unity" field.</summary>
     public const int UnityFieldNumber = 4;
-    private global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Types.UnityEngine unity_;
+    private global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Types.UnityEngine unity_;
     /// <summary>
     /// Specific data logged for every supported engine.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Types.UnityEngine Unity {
+    public global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Types.UnityEngine Unity {
       get { return unity_; }
       set {
         unity_ = value;
@@ -272,7 +272,7 @@ namespace GoogleARCoreInternal.Proto {
       }
       if (other.unity_ != null) {
         if (unity_ == null) {
-          unity_ = new global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Types.UnityEngine();
+          unity_ = new global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Types.UnityEngine();
         }
         Unity.MergeFrom(other.Unity);
       }
@@ -304,7 +304,7 @@ namespace GoogleARCoreInternal.Proto {
           }
           case 34: {
             if (unity_ == null) {
-              unity_ = new global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Types.UnityEngine();
+              unity_ = new global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Types.UnityEngine();
             }
             input.ReadMessage(unity_);
             break;
@@ -334,7 +334,7 @@ namespace GoogleARCoreInternal.Proto {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Descriptor.NestedTypes[0]; }
+          get { return global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -378,12 +378,12 @@ namespace GoogleARCoreInternal.Proto {
 
         /// <summary>Field number for the "edition_type" field.</summary>
         public const int EditionTypeFieldNumber = 2;
-        private global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Types.UnityEngine.Types.EditionType editionType_ = 0;
+        private global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Types.UnityEngine.Types.EditionType editionType_ = 0;
         /// <summary>
         /// Unity edition type being used.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Types.UnityEngine.Types.EditionType EditionType {
+        public global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Types.UnityEngine.Types.EditionType EditionType {
           get { return editionType_; }
           set {
             editionType_ = value;
@@ -481,7 +481,7 @@ namespace GoogleARCoreInternal.Proto {
                 break;
               }
               case 16: {
-                editionType_ = (global::GoogleARCoreInternal.Proto.ArCoreSdkLog.Types.UnityEngine.Types.EditionType) input.ReadEnum();
+                editionType_ = (global::GoogleARCore.InstantPreview.Editor.Proto.ArCoreSdkLog.Types.UnityEngine.Types.EditionType) input.ReadEnum();
                 break;
               }
             }

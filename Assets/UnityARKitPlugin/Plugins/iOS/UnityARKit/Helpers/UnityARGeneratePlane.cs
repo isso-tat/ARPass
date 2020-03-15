@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if UNITY_IOS
+
+using System;
 using System.Collections.Generic;
 
 namespace UnityEngine.XR.iOS
@@ -30,4 +32,6 @@ namespace UnityEngine.XR.iOS
         }
 	}
 }
+
+#endif
 

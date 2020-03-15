@@ -20,7 +20,7 @@
 namespace GoogleARCore
 {
     using System;
-    using GoogleARCoreInternal;
+    using InstantPreview.Editor;
     using UnityEngine;
 
     /// <summary>

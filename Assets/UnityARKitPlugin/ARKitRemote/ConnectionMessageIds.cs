@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if UNITY_IOS
+
+using System;
 
 namespace UnityEngine.XR.iOS
 {
@@ -18,3 +20,5 @@ namespace UnityEngine.XR.iOS
 		public static Guid editorInitARKit { get { return new Guid("2e5d7c45-daef-474d-bf55-1f02f0a10b69"); } }
 	};
 }
+
+#endif

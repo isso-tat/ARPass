@@ -22,7 +22,7 @@
 // options to the common dialog. See also ARCoreAnalyticsPreferences.
 #if UNITY_2018_3_OR_NEWER
 
-namespace GoogleARCoreInternal
+namespace GoogleARCore.InstantPreview.Editor
 {
     using UnityEditor;
 

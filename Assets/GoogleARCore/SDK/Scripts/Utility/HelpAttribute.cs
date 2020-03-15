@@ -18,7 +18,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCoreInternal
+namespace GoogleARCore.InstantPreview.Editor
 {
     using UnityEngine;
 
@@ -44,7 +44,7 @@ namespace GoogleARCoreInternal
         public readonly HelpMessageType MessageType = HelpMessageType.None;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:GoogleARCoreInternal.HelpAttribute"/>
+        /// Initializes a new instance of the <see cref="T:GoogleARCore.InstantPreview.Editor.HelpAttribute"/>
         /// class.
         /// </summary>
         /// <param name="helpMessage">Help message.</param>

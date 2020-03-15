@@ -18,13 +18,12 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace GoogleARCore.Examples.Common
 {
-    using System.Collections.Generic;
-    using GoogleARCore;
-    using UnityEngine;
-    using UnityEngine.UI;
-
     /// <summary>
     /// Provides plane discovery visuals that guide users to scan surroundings and discover planes.
     /// This consists of a hand animation and a snackbar with short instructions. If no plane is found

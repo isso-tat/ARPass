@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if UNITY_IOS
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -378,3 +380,5 @@ namespace UnityARInterface
         }
     }
 }
+
+#endif

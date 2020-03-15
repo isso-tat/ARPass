@@ -18,7 +18,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCoreInternal.CrossPlatform
+namespace GoogleARCore.InstantPreview.Editor.CrossPlatform
 {
     using GoogleARCore;
     using GoogleARCore.CrossPlatform;

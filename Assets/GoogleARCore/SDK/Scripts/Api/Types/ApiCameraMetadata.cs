@@ -21,7 +21,7 @@
 [module: System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules",
  "SA1649:FileHeaderFileNameDocumentationMustMatchTypeName", Justification = "Internal.")]
 
-namespace GoogleARCoreInternal
+namespace GoogleARCore.InstantPreview.Editor
 {
     using System;
     using System.Diagnostics.CodeAnalysis;

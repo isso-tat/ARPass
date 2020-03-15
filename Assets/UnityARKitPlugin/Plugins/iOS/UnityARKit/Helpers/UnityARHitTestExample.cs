@@ -1,3 +1,5 @@
+#if UNITY_IOS
+
 using System;
 using System.Collections.Generic;
 
@@ -59,3 +61,4 @@ namespace UnityEngine.XR.iOS
 	}
 }
 
+#endif

@@ -1,3 +1,5 @@
+#if UNITY_IOS
+
 using System;
 using UnityEngine;
 using UnityEngine.XR.iOS;
@@ -412,3 +414,5 @@ namespace Utils
 
 	};
 }
+
+#endif

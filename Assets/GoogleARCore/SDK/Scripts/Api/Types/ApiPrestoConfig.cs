@@ -18,13 +18,15 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCoreInternal
+using GoogleARCore.InstantPreview.Editor.CrossPlatform;
+
+namespace GoogleARCore.InstantPreview.Editor
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
     using GoogleARCore;
-    using GoogleARCoreInternal.CrossPlatform;
+    using Editor.CrossPlatform;
 
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented",
     Justification = "Internal")]

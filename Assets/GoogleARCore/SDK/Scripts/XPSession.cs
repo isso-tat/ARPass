@@ -20,7 +20,7 @@
 
 namespace GoogleARCore.CrossPlatform
 {
-    using GoogleARCoreInternal.CrossPlatform;
+    using InstantPreview.Editor.CrossPlatform;
     using UnityEngine;
 
 #if ARCORE_IOS_SUPPORT

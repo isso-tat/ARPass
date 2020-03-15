@@ -3,7 +3,7 @@ using UnityEngine.Networking.PlayerConnection;
 using System.Text;
 using Utils; 
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR && UNITY_IOS
  
 using UnityEditor.Networking.PlayerConnection;
 

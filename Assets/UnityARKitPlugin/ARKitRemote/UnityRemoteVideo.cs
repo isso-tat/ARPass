@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if UNITY_IOS
+
+using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -110,3 +112,5 @@ namespace UnityEngine.XR.iOS
 		#endif
 	}
 }
+
+#endif

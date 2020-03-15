@@ -1,5 +1,5 @@
-using ARPass.Auth;
-using ARPass.Http;
+using ARPass.Core.Auth;
+using ARPass.Core.Http;
 using UniRx.Async;
 using UnityEngine;
 

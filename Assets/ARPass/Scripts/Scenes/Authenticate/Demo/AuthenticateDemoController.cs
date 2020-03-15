@@ -1,4 +1,5 @@
-using ARPass.Http;
+using ARPass.Core.Http;
+using ARPass.Core.SceneManagement;
 using ARPass.Utils;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -10,6 +11,9 @@ namespace ARPass.Scenes.Authenticate.Demo
 	{
 		[Inject, UsedImplicitly]
 		AuthenticateClient _client;
+
+		[Inject, UsedImplicitly]
+		ARPassSceneManager _sceneManager;
 
 		void Start()
 		{
@@ -27,7 +31,9 @@ namespace ARPass.Scenes.Authenticate.Demo
 			try
 			{
 				await _client.Login("Foo@gmail.com", "Bar123");
-				ARPassSceneManager.Instance.LoadScene(SceneName.Map);
+				_sceneManager
+					.LoadScene(SceneName.Map)
+					.Away();
 			}
 			catch (APIException e)
 			{

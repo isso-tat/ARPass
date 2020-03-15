@@ -1,5 +1,6 @@
 ﻿using System;
-using ARPass.Http;
+using ARPass.Core.Http;
+using ARPass.Core.SceneManagement;
 using ARPass.Utils;
 using JetBrains.Annotations;
 using UniRx;
@@ -13,6 +14,12 @@ namespace ARPass.Scenes.Start.View
 	{
 		[Inject, UsedImplicitly]
 		IStartClient _client;
+
+		[Inject, UsedImplicitly]
+		APIClient _api;
+
+		[Inject, UsedImplicitly]
+		ARPassSceneManager _sceneManager;
 
 		[SerializeField]
 		GameObject _startCanvas;
@@ -52,10 +59,10 @@ namespace ARPass.Scenes.Start.View
 			switch (status)
 			{
 				case APIStatus.OK:
-					await ARPassSceneManager.Instance.LoadSceneAsync(SceneName.Map);
+					await _sceneManager.LoadSceneAsync(SceneName.Map);
 					break;
 				case APIStatus.Unauthorized:
-					await ARPassSceneManager.Instance.LoadSceneAsync(SceneName.Authenticate);
+					await _sceneManager.LoadSceneAsync(SceneName.Authenticate);
 					break;
 				default:
 					ShowError(status);

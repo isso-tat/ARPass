@@ -1,7 +1,6 @@
-using UnityEngine;
 using Zenject;
 
-namespace ARPass.Auth
+namespace ARPass.Core.Auth
 {
 	public sealed class AuthInstaller : Installer<AuthInstaller>
 	{

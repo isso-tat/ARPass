@@ -1,4 +1,4 @@
-using ARPass.Http;
+using ARPass.Core.Http;
 using ARPass.Utils;
 using JetBrains.Annotations;
 using UnityEngine;

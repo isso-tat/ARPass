@@ -1,19 +1,16 @@
 {
-    "name": "Http",
+    "name": "ARPass.Core",
     "references": [
-        "GUID:97318a59a88fe4cffa4e7d6dacc6dee1",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
         "GUID:a0a7faae7ed82480086cf0bc8852603d",
         "GUID:560b04d1a97f54a4e82edc0cbbb69285",
-        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
         "GUID:f51ebe6a0ceec4240a699833d6309b23"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": true,
-    "precompiledReferences": [
-        "Newtonsoft.Json.dll"
-    ],
+    "overrideReferences": false,
+    "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],

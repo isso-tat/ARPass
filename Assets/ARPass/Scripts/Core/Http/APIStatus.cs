@@ -1,4 +1,4 @@
-namespace ARPass.Http
+namespace ARPass.Core.Http
 {
 	public enum APIStatus
 	{

@@ -1,6 +1,6 @@
 using System;
-using ARPass.Auth;
-using ARPass.Http;
+using ARPass.Core.Auth;
+using ARPass.Core.Http;
 using ARPass.Utils;
 using UniRx;
 using UniRx.Async;

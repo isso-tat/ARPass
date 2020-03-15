@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ARPass.Auth
+namespace ARPass.Core.Auth
 {
 	public class AuthRepository
 	{

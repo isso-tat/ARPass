@@ -1,6 +1,6 @@
 using System;
 
-namespace ARPass.Http
+namespace ARPass.Core.Http
 {
 	public sealed class APIException : Exception
 	{

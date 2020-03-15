@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace ARPass.Auth
+namespace ARPass.Core.Auth
 {
 	public class AuthEntity
 	{

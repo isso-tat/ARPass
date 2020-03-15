@@ -1,9 +1,9 @@
-using ARPass.Auth;
+using ARPass.Core.Auth;
 using ARPass.Utils;
 using UniRx.Async;
 using UnityEngine;
 
-namespace ARPass.Http
+namespace ARPass.Core.Http
 {
 	public partial class APIClient
 	{

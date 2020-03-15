@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace ARPass.Http
+namespace ARPass.Core.Http
 {
 	public sealed class LoginResult
 	{
@@ -14,5 +14,8 @@ namespace ARPass.Http
 	{
 		[JsonProperty("username")]
 		public string UserName { get; private set; }
+		
+		[JsonProperty("level")]
+		public int Level { get; private set; }
 	}
 }

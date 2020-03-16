@@ -19,7 +19,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCoreInternal
+namespace GoogleARCore.InstantPreview.Editor
 {
     using System;
     using System.Diagnostics.CodeAnalysis;

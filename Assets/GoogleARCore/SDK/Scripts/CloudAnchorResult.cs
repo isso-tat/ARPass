@@ -22,7 +22,7 @@ namespace GoogleARCore.CrossPlatform
 {
     using System;
     using System.Collections.Generic;
-    using GoogleARCoreInternal;
+    using InstantPreview.Editor;
     using UnityEngine;
 
     /// <summary>

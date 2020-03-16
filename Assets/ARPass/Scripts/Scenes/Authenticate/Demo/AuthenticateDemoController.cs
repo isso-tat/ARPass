@@ -10,7 +10,7 @@ namespace ARPass.Scenes.Authenticate.Demo
 	public sealed class AuthenticateDemoController : MonoBehaviour
 	{
 		[Inject, UsedImplicitly]
-		AuthenticateClient _client;
+		IAuthenticateClient _client;
 
 		[Inject, UsedImplicitly]
 		ARPassSceneManager _sceneManager;

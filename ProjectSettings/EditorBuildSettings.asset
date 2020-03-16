@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ARPass/Scenes/Core.unity
-    guid: f89d2c96d4075434cbfdb8d792efa67d
-  - enabled: 1
     path: Assets/ARPass/Scenes/Components/Start.unity
     guid: 1e9e8c8c055ca44efb32e6d40f939350
   - enabled: 1
-    path: Assets/ARPass/Scenes/Components/Map.unity
-    guid: 9e42ce1e5d4a843449732794921bf81d
-  - enabled: 1
     path: Assets/ARPass/Scenes/Components/Authenticate.unity
     guid: 9afdf2d1c396f4734b5f7c4bf2c3289b
+  - enabled: 1
+    path: Assets/ARPass/Scenes/Components/Map.unity
+    guid: b971aff3ef0ce4ffc914294371e89660
+  - enabled: 1
+    path: Assets/ARPass/Scenes/Core.unity
+    guid: f89d2c96d4075434cbfdb8d792efa67d
   m_configObjects: {}

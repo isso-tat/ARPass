@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using UnityEngine;
 
 namespace ARPass.Core.Auth
 {
@@ -6,5 +7,8 @@ namespace ARPass.Core.Auth
 	{
 		[JsonProperty("name")]
 		public string Name { get; private set; }
+		
+		[JsonProperty("position")]
+		public Vector2 Position { get; private set; }
 	}
 }

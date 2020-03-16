@@ -18,7 +18,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCoreInternal
+namespace GoogleARCore.InstantPreview.Editor
 {
     using System.Collections.Generic;
     using GoogleARCore;

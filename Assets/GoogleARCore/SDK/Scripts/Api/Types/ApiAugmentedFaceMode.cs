@@ -17,7 +17,7 @@
 //
 // </copyright>
 //-----------------------------------------------------------------------
-namespace GoogleARCoreInternal
+namespace GoogleARCore.InstantPreview.Editor
 {
     internal enum ApiAugmentedFaceMode
     {

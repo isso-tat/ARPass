@@ -20,7 +20,7 @@
 
 namespace GoogleARCore
 {
-    using GoogleARCoreInternal;
+    using InstantPreview.Editor;
 
     internal static class DisplayUvCoordinateTypeExtension
     {

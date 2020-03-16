@@ -24,7 +24,7 @@ namespace GoogleARCore.Examples.AugmentedImage
     using System.Collections.Generic;
     using System.Runtime.InteropServices;
     using GoogleARCore;
-    using GoogleARCoreInternal;
+    using InstantPreview.Editor;
     using UnityEngine;
 
     /// <summary>

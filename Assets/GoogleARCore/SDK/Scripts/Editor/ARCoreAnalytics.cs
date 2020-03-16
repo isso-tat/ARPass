@@ -18,13 +18,15 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCoreInternal
+using GoogleARCore.InstantPreview.Editor.Proto;
+
+namespace GoogleARCore.InstantPreview.Editor
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Text;
     using Google.Protobuf;
-    using GoogleARCoreInternal.Proto;
+    using Editor.Proto;
     using UnityEditor;
     using UnityEngine;
     using UnityEngine.Networking;

@@ -18,14 +18,14 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCoreInternal
+namespace GoogleARCore.InstantPreview.Editor
 {
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
     using GoogleARCore;
-    using GoogleARCoreInternal;
+    using Editor;
     using UnityEngine;
 
 #if UNITY_IOS && !UNITY_EDITOR
@@ -33,7 +33,7 @@ namespace GoogleARCoreInternal
     using IOSImport = System.Runtime.InteropServices.DllImportAttribute;
 #else
     using AndroidImport = System.Runtime.InteropServices.DllImportAttribute;
-    using IOSImport = GoogleARCoreInternal.DllImportNoop;
+    using IOSImport = DllImportNoop;
 #endif
 
     internal class AugmentedImageApi

@@ -18,7 +18,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCoreInternal
+namespace GoogleARCore.InstantPreview.Editor
 {
     internal class DllImportNoop : System.Attribute
     {

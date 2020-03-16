@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace GoogleARCoreInternal.Proto {
+namespace GoogleARCore.InstantPreview.Editor.Proto {
 
   /// <summary>Holder for reflection information generated from arcore_clearcut.proto</summary>
   public static partial class ArcoreClearcutReflection {
@@ -412,9 +412,9 @@ namespace GoogleARCoreInternal.Proto {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GoogleARCoreInternal.Proto.LogEvent), global::GoogleARCoreInternal.Proto.LogEvent.Parser, new[]{ "EventTimeMs", "EventUptimeMs", "SourceExtension", "TimezoneOffsetSecondsVal" }, new[]{ "TimezoneOffsetSeconds" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GoogleARCoreInternal.Proto.LogRequest), global::GoogleARCoreInternal.Proto.LogRequest.Parser, new[]{ "RequestTimeMs", "RequestUptimeMs", "LogSourceVal", "LogEvent" }, new[]{ "LogSource" }, new[]{ typeof(global::GoogleARCoreInternal.Proto.LogRequest.Types.LogSource) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GoogleARCoreInternal.Proto.LogResponse), global::GoogleARCoreInternal.Proto.LogResponse.Parser, new[]{ "NextRequestWaitMillisVal" }, new[]{ "NextRequestWaitMillis" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GoogleARCore.InstantPreview.Editor.Proto.LogEvent), global::GoogleARCore.InstantPreview.Editor.Proto.LogEvent.Parser, new[]{ "EventTimeMs", "EventUptimeMs", "SourceExtension", "TimezoneOffsetSecondsVal" }, new[]{ "TimezoneOffsetSeconds" }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GoogleARCore.InstantPreview.Editor.Proto.LogRequest), global::GoogleARCore.InstantPreview.Editor.Proto.LogRequest.Parser, new[]{ "RequestTimeMs", "RequestUptimeMs", "LogSourceVal", "LogEvent" }, new[]{ "LogSource" }, new[]{ typeof(global::GoogleARCore.InstantPreview.Editor.Proto.LogRequest.Types.LogSource) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GoogleARCore.InstantPreview.Editor.Proto.LogResponse), global::GoogleARCore.InstantPreview.Editor.Proto.LogResponse.Parser, new[]{ "NextRequestWaitMillisVal" }, new[]{ "NextRequestWaitMillis" }, null, null)
           }));
     }
     #endregion
@@ -432,7 +432,7 @@ namespace GoogleARCoreInternal.Proto {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GoogleARCoreInternal.Proto.ArcoreClearcutReflection.Descriptor.MessageTypes[0]; }
+      get { return global::GoogleARCore.InstantPreview.Editor.Proto.ArcoreClearcutReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -706,7 +706,7 @@ namespace GoogleARCoreInternal.Proto {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GoogleARCoreInternal.Proto.ArcoreClearcutReflection.Descriptor.MessageTypes[1]; }
+      get { return global::GoogleARCore.InstantPreview.Editor.Proto.ArcoreClearcutReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -777,8 +777,8 @@ namespace GoogleARCoreInternal.Proto {
     /// [default = UNKNOWN];
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::GoogleARCoreInternal.Proto.LogRequest.Types.LogSource LogSourceVal {
-      get { return logSourceCase_ == LogSourceOneofCase.LogSourceVal ? (global::GoogleARCoreInternal.Proto.LogRequest.Types.LogSource) logSource_ : 0; }
+    public global::GoogleARCore.InstantPreview.Editor.Proto.LogRequest.Types.LogSource LogSourceVal {
+      get { return logSourceCase_ == LogSourceOneofCase.LogSourceVal ? (global::GoogleARCore.InstantPreview.Editor.Proto.LogRequest.Types.LogSource) logSource_ : 0; }
       set {
         logSource_ = value;
         logSourceCase_ = LogSourceOneofCase.LogSourceVal;
@@ -787,11 +787,11 @@ namespace GoogleARCoreInternal.Proto {
 
     /// <summary>Field number for the "log_event" field.</summary>
     public const int LogEventFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::GoogleARCoreInternal.Proto.LogEvent> _repeated_logEvent_codec
-        = pb::FieldCodec.ForMessage(26, global::GoogleARCoreInternal.Proto.LogEvent.Parser);
-    private readonly pbc::RepeatedField<global::GoogleARCoreInternal.Proto.LogEvent> logEvent_ = new pbc::RepeatedField<global::GoogleARCoreInternal.Proto.LogEvent>();
+    private static readonly pb::FieldCodec<global::GoogleARCore.InstantPreview.Editor.Proto.LogEvent> _repeated_logEvent_codec
+        = pb::FieldCodec.ForMessage(26, global::GoogleARCore.InstantPreview.Editor.Proto.LogEvent.Parser);
+    private readonly pbc::RepeatedField<global::GoogleARCore.InstantPreview.Editor.Proto.LogEvent> logEvent_ = new pbc::RepeatedField<global::GoogleARCore.InstantPreview.Editor.Proto.LogEvent>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::GoogleARCoreInternal.Proto.LogEvent> LogEvent {
+    public pbc::RepeatedField<global::GoogleARCore.InstantPreview.Editor.Proto.LogEvent> LogEvent {
       get { return logEvent_; }
     }
 
@@ -3804,7 +3804,7 @@ namespace GoogleARCoreInternal.Proto {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GoogleARCoreInternal.Proto.ArcoreClearcutReflection.Descriptor.MessageTypes[2]; }
+      get { return global::GoogleARCore.InstantPreview.Editor.Proto.ArcoreClearcutReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

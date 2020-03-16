@@ -17,7 +17,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCore.Examples.Common
+namespace GoogleARCore.Examples.Common.Editor
 {
     using System;
     using System.Reflection;

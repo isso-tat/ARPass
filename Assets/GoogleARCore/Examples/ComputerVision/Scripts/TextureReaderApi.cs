@@ -27,7 +27,7 @@ namespace GoogleARCore.Examples.ComputerVision
     using IOSImport = System.Runtime.InteropServices.DllImportAttribute;
 #else
     using AndroidImport = System.Runtime.InteropServices.DllImportAttribute;
-    using IOSImport = GoogleARCoreInternal.DllImportNoop;
+    using IOSImport = InstantPreview.Editor.DllImportNoop;
 #endif
 
     /// <summary>

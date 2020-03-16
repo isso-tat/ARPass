@@ -17,12 +17,12 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
 namespace GoogleARCore.Examples.Common
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using UnityEngine;
-
     /// <summary>
     /// Visualizes the feature points for spatial mapping, showing a pop animation when they appear.
     /// </summary>

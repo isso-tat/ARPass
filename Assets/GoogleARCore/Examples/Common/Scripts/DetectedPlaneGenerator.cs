@@ -18,12 +18,11 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace GoogleARCore.Examples.Common
 {
-    using System.Collections.Generic;
-    using GoogleARCore;
-    using UnityEngine;
-
     /// <summary>
     /// Manages the visualization of detected planes in the scene.
     /// </summary>

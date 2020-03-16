@@ -24,7 +24,7 @@ namespace GoogleARCore
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using GoogleARCore;
-    using GoogleARCoreInternal;
+    using InstantPreview.Editor;
     using UnityEngine;
     using UnityEngine.Profiling;
 

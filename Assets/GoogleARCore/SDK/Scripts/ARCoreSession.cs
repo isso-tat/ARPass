@@ -21,7 +21,7 @@
 namespace GoogleARCore
 {
     using System.Collections.Generic;
-    using GoogleARCoreInternal;
+    using InstantPreview.Editor;
     using UnityEngine;
 
     /// <summary>

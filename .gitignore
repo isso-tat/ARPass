@@ -19,3 +19,6 @@ Assets/AssetStoreTools*
 *.sln
 
 *.userprefs
+
+# Map box setting.
+MapboxConfiguration.txt*

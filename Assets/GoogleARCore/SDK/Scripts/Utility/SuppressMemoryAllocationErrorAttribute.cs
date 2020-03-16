@@ -4,7 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCoreInternal
+namespace GoogleARCore.InstantPreview.Editor
 {
     using System;
     using UnityEngine;
@@ -17,7 +17,7 @@ namespace GoogleARCoreInternal
     {
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref="GoogleARCoreInternal.SuppressMemoryAllocationErrorAttribute"/> class.
+        /// <see cref="SuppressMemoryAllocationErrorAttribute"/> class.
         /// </summary>
         public SuppressMemoryAllocationErrorAttribute()
         {

@@ -77,10 +77,10 @@ namespace GoogleARCore
             "StyleCop.CSharp.DocumentationRules",
             "SA1600:ElementsMustBeDocumented",
             Justification = "Deprecated")]
-        public static implicit operator GoogleARCoreInternal.ApiDisplayUvCoords(
+        public static implicit operator InstantPreview.Editor.ApiDisplayUvCoords(
             DisplayUvCoords coords)
         {
-            return new GoogleARCoreInternal.ApiDisplayUvCoords(
+            return new InstantPreview.Editor.ApiDisplayUvCoords(
                 coords.TopLeft, coords.TopRight, coords.BottomLeft, coords.BottomRight);
         }
 

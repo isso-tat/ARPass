@@ -1,4 +1,6 @@
-﻿namespace Mapbox.Editor
+﻿#if UNITY_EDITOR
+
+namespace Mapbox.Editor
 {
 	using System.Collections.Generic;
 	using UnityEngine;
@@ -192,3 +194,5 @@
 		}
 	}
 }
+
+#endif

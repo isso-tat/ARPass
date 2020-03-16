@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 namespace Mapbox.Unity.Map
 {
 	using System.Collections;
@@ -45,3 +47,5 @@ namespace Mapbox.Unity.Map
 		}
 	}
 }
+
+#endif

@@ -1,4 +1,6 @@
-﻿using Mapbox.Unity.Map.TileProviders;
+﻿#if UNITY_EDITOR
+
+using Mapbox.Unity.Map.TileProviders;
 
 namespace Mapbox.Editor
 {
@@ -76,3 +78,5 @@ namespace Mapbox.Editor
 		}
 	}
 }
+
+#endif

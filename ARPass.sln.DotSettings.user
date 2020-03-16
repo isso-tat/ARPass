@@ -3,4 +3,5 @@
   &lt;Assembly Path="/Users/tatsukiisogami/Documents/ARPass/Library/ScriptAssemblies/UnityEngine.UI.dll" /&gt;
   &lt;Assembly Path="/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ARModule.dll" /&gt;
   &lt;Assembly Path="/Users/tatsukiisogami/Documents/ARPass/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll" /&gt;
+  &lt;Assembly Path="/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents/Managed/UnityEditor.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>

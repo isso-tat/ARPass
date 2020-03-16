@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 namespace Mapbox.Editor
 {
 	using UnityEditor;
@@ -17,3 +19,5 @@ namespace Mapbox.Editor
 
 	}
 }
+
+#endif

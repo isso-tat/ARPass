@@ -1,4 +1,6 @@
-﻿namespace Mapbox.Editor
+﻿#if UNITY_EDITOR
+
+namespace Mapbox.Editor
 {
 	using UnityEngine;
 	using UnityEditor;
@@ -55,3 +57,5 @@
 		}
 	}
 }
+
+#endif

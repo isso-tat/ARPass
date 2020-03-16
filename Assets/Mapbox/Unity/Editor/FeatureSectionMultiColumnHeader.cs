@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+
+using System;
 namespace Mapbox.Editor
 {
 	using UnityEditor;
@@ -69,3 +71,5 @@ namespace Mapbox.Editor
 		}
 	}
 }
+
+#endif

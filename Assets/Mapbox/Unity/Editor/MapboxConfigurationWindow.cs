@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 namespace Mapbox.Editor
 {
 	using System.Collections.Generic;
@@ -666,3 +668,5 @@ namespace Mapbox.Editor
 		}
 	}
 }
+
+#endif

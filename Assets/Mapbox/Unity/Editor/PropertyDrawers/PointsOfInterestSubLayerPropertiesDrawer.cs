@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 namespace Mapbox.Unity.Map
 {
 	using UnityEngine;
@@ -230,3 +232,5 @@ namespace Mapbox.Unity.Map
 		}
 	}
 }
+
+#endif

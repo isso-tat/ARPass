@@ -1,4 +1,6 @@
-﻿namespace Mapbox.Unity.Utilities.DebugTools
+﻿#if UNITY_EDITOR
+
+namespace Mapbox.Unity.Utilities.DebugTools
 {
 	using UnityEngine;
 	using UnityEditor;
@@ -18,3 +20,5 @@
 		}
 	}
 }
+
+#endif

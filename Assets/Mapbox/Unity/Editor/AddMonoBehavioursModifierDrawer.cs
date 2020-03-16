@@ -1,11 +1,14 @@
-﻿namespace Mapbox.Editor
+﻿#if UNITY_EDITOR
+
+namespace Mapbox.Editor
 {
 	using Mapbox.Unity.MeshGeneration.Modifiers;
 	using UnityEditor;
 	using UnityEngine;
 
 	[CustomPropertyDrawer(typeof(AddMonoBehavioursModifierType))]
-	class AddMonoBehavioursModifierDrawer : PropertyDrawer
+	class 
+		AddMonoBehavioursModifierDrawer : PropertyDrawer
 	{
 		const int _offset = 40;
 		MonoScript _monoscript;
@@ -54,3 +57,5 @@
 		}
 	}
 }
+
+#endif

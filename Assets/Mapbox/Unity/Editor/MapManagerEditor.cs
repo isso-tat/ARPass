@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+
+using System;
 
 namespace Mapbox.Editor
 {
@@ -368,3 +370,5 @@ namespace Mapbox.Editor
 		}
 	}
 }
+
+#endif

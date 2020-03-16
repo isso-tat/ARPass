@@ -8,7 +8,9 @@ namespace ARPass.Utils
 {
 	public sealed class GUIField : MonoBehaviour
 	{
-		static readonly GUIField instance = new GameObject().AddComponent<GUIField>();
+		static readonly GUIField instance = new GameObject(nameof(GUIField)).AddComponent<GUIField>();
+
+		const int _refWidth = 375;
 
 		[SerializeField]
 		bool _enableGui = true;
@@ -25,6 +27,12 @@ namespace ARPass.Utils
 		void OnGUI()
 		{
 #if !FONDI_BUILD_RELEASE
+			var scale = new Vector2(
+				(float) Screen.width / _refWidth,
+				(float) Screen.width / _refWidth);
+
+			GUIUtility.ScaleAroundPivot(scale, Vector2.zero);
+
 			if (!_enableGui) return;
 
 			// Space for safe area.

@@ -15,6 +15,9 @@ namespace ARPass.Scenes.Authenticate.Demo
 		[Inject, UsedImplicitly]
 		ARPassSceneManager _sceneManager;
 
+		[Inject, UsedImplicitly]
+		SceneEffectClient _sceneEffect;
+
 		void Start()
 		{
 			DebugUtils.Log("start auth.");
@@ -31,9 +34,9 @@ namespace ARPass.Scenes.Authenticate.Demo
 			try
 			{
 				await _client.Login("Foo@gmail.com", "Bar123");
-				_sceneManager
-					.LoadScene(SceneName.Map)
-					.Away();
+				await _sceneEffect.Fade(fade: true, .5f);
+				await _sceneManager.LoadScene(SceneName.Map);
+				_sceneEffect.Fade(fade: false, .75f).Away();
 			}
 			catch (APIException e)
 			{

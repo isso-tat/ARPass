@@ -21,7 +21,9 @@ public class UnityARUserAnchorExample : MonoBehaviour {
 	private HashSet<string> m_Clones;
 
 
+#if UNITY_IOS
 	private float m_TimeUntilRemove = 5.0f;
+#endif
 
 	void  Awake() {
 #if UNITY_IOS

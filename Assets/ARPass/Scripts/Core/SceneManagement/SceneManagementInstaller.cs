@@ -9,6 +9,10 @@ namespace ARPass.Core.SceneManagement
 			Container
 				.BindInterfacesAndSelfTo<ARPassSceneManager>()
 				.AsSingle();
+
+			Container
+				.BindInterfacesAndSelfTo<SceneEffectClient>()
+				.AsSingle();
 		}
 	}
 }
